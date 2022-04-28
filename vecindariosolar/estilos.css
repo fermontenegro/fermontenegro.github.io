@@ -25,3 +25,9 @@
 .fondo2{
     background: url(./imagenes/fondo2.jpg);
 }
+
+.tour .tourmap {
+    cursor: pointer;
+    
+
+}
