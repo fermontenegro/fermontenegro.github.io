@@ -6,7 +6,10 @@
 }
 
 .titulo h4{
+    text-align: justify;
     margin-bottom: 0%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 
@@ -18,8 +21,45 @@
 }
 
 .tour {
-    justify-content: center;
+    position: relative;
+    display: block;
     text-align: center;
+}
+
+.titulotour h4{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+}
+
+#texto1{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    color: aliceblue;
+}
+
+#texto2{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    color: aliceblue;
+}
+
+#texto3{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    color: aliceblue;
 }
 
 .fondo2{
