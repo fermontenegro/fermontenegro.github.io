@@ -1,3 +1,8 @@
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 .titulo{
     text-align: center;
     justify-content: center;
@@ -10,6 +15,7 @@
     margin-bottom: 0%;
     margin-left: 20%;
     margin-right: 20%;
+    padding-bottom: 20px;
 }
 
 
@@ -24,12 +30,15 @@
     position: relative;
     display: block;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .titulotour h4{
     margin-left: 20%;
     margin-right: 20%;
     text-align: justify;
+    padding-bottom: 20px;
+    
 }
 
 #texto1{
@@ -68,6 +77,4 @@
 
 .tour .tourmap {
     cursor: pointer;
-    
-
 }

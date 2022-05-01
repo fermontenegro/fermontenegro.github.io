@@ -121,8 +121,8 @@
                   <div class="card-body">
                     <h5 class="card-title">Escala Sistema solar</h5>
                     <p class="card-text">
-                      Nuestro sistema solar a escala con todos sus planetas y otros puntos de intere como cinturones de
-                      asteroides, etc.
+                      Nuestro sistema solar a escala con todos sus planetas y otros puntos de interes como cinturones de
+                      asteroides, cometas, etc.
                     </p>
                   </div>
                 </div>
@@ -134,15 +134,19 @@
     </div>
     <!-- Carousel wrapper -->
     <div class="titulotour">
+
       <h1>Tour</h1>
-      <h4>Aca podras identificar todo los que te interese sobre la imagen solo debes poner el mouse sobre algun lugar de
+      <h4>Aca podras identificar todo los que te interese sobre la imagen solo debes poner el mouse sobre algun lugar
+        de
         interes. <br>
-        No se sabe con certeza cómo se forman los planetas. La teoría predominante es que lo hacen durante el colapso de
+        No se sabe con certeza cómo se forman los planetas. La teoría predominante es que lo hacen durante el colapso
+        de
         una nebulosa en un delgado disco de gas y polvo. En el centro se forma una protoestrella rodeada de un disco
         protoplanetario en rotación. Mediante la acreción (un proceso de coalescencia por colisión), las partículas de
         gas y polvo del disco acumulan sin interrupción masa para formar objetos cada vez más grandes. Estas
         acumulaciones de masa, conocidas como planetesimales, aceleran el proceso de acreción por la atracción
-        gravitatoria de materiales adicionales y se vuelven cada vez más densas hasta que colapsan bajo la gravedad para
+        gravitatoria de materiales adicionales y se vuelven cada vez más densas hasta que colapsan bajo la gravedad
+        para
         formar protoplanetas.
     </div>
 
@@ -153,29 +157,33 @@
 
       <map name="tourmap">
 
-        <div id="texto1" style="display: none;">
-          <h6>El Sol (del latín sol, solis, dios Sol invictus o ‘sol’, Helios en la mitología griega,
-            a su vez de la raíz protoindoeuropea sauel-,
-            ‘brillar’) es una estrella de tipo-G de la secuencia principal y
-            clase de luminosidad V que se encuentra en el centro del sistema solar y constituye la mayor fuente de
-            radiación electromagnética de este sistema planetario.</h6>
-        </div>
+        <div class="textos">
+          <div id="texto1" style="display: none;">
+            <h6>El Sol (del latín sol, solis, dios Sol invictus o ‘sol’, Helios en la mitología griega,
+              a su vez de la raíz protoindoeuropea sauel-,
+              ‘brillar’) es una estrella de tipo-G de la secuencia principal y
+              clase de luminosidad V que se encuentra en el centro del sistema solar y constituye la mayor fuente de
+              radiación electromagnética de este sistema planetario.</h6>
+          </div>
 
-        <div id="texto2" style="display: none;">
-          <h6>Saturno es el sexto planeta del sistema solar contando desde el Sol,
-            el segundo en tamaño y masa después de Júpiter y el único con un sistema de anillos visible desde la Tierra.
-            Su nombre proviene del dios romano Saturno. Forma parte de los denominados planetas exteriores o gaseosos.
-          </h6>
-        </div>
+          <div id="texto2" style="display: none;">
+            <h6>Saturno es el sexto planeta del sistema solar contando desde el Sol,
+              el segundo en tamaño y masa después de Júpiter y el único con un sistema de anillos visible desde la
+              Tierra.
+              Su nombre proviene del dios romano Saturno. Forma parte de los denominados planetas exteriores o gaseosos.
+            </h6>
+          </div>
 
-        <div id="texto3" style="display: none;">
-          <h6>Un cometa es un cuerpo celeste constituido por polvo, rocas y partículas de hielo que orbita alrededor del
-            Sol siguiendo diferentes trayectorias elípticas.
-            Los cometas forman parte del Sistema solar, junto con el Sol, los cuatro planetas interiores,
-            los cuatro planetas exteriores, sus respectivos satélites, los plutoides y los cuerpos menores del sistema
-            solar. </h6>
-        </div>
+          <div id="texto3" style="display: none;">
+            <h6>Un cometa es un cuerpo celeste constituido por polvo, rocas y partículas de hielo que orbita alrededor
+              del
+              Sol siguiendo diferentes trayectorias elípticas.
+              Los cometas forman parte del Sistema solar, junto con el Sol, los cuatro planetas interiores,
+              los cuatro planetas exteriores, sus respectivos satélites, los plutoides y los cuerpos menores del sistema
+              solar. </h6>
+          </div>
 
+        </div>
 
         <area shape="rect" coords="900,600, 500,263" href="#texto1" alt="" onclick="mostrartexto1()">
         <area shape="rect" coords="320,40, 400,180" href="#texto2" alt="" onclick="mostrartexto2()">
@@ -200,28 +208,28 @@
       var p2 = document.getElementById("texto2");
       var p3 = document.getElementById("texto3");
 
-      function mostrartexto1(){
-         if(p1.style.display === "none"){
-           p1.style.display = "block";
-           p2.style.display = "none";
-           p3.style.display = "none"
-         }
+      function mostrartexto1() {
+        if (p1.style.display === "none") {
+          p1.style.display = "block";
+          p2.style.display = "none";
+          p3.style.display = "none"
+        }
       }
 
-      function mostrartexto2(){
-         if(p2.style.display === "none"){
-           p2.style.display = "block";
-           p1.style.display = "none";
-           p3.style.display = "none"
-         }
+      function mostrartexto2() {
+        if (p2.style.display === "none") {
+          p2.style.display = "block";
+          p1.style.display = "none";
+          p3.style.display = "none"
+        }
       }
 
-      function mostrartexto3(){
-         if(p3.style.display === "none"){
-           p3.style.display = "block";
-           p2.style.display = "none";
-           p1.style.display = "none"
-         }
+      function mostrartexto3() {
+        if (p3.style.display === "none") {
+          p3.style.display = "block";
+          p2.style.display = "none";
+          p1.style.display = "none"
+        }
       }
 
 
