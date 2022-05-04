@@ -19,6 +19,10 @@
     height: auto;
 }
 
+#carouselMultiItemExample{
+    padding-top: 45px;
+}
+
 .titulotour{
     text-align: center;
     justify-content: center;
@@ -30,6 +34,7 @@
     position: relative;
     display: block;
     text-align: center;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -55,6 +60,7 @@
     margin-right: 20%;
     text-align: justify;
     color: aliceblue;
+    padding-top: 20px;
 }
 
 #texto2{
@@ -65,6 +71,7 @@
     margin-right: 20%;
     text-align: justify;
     color: aliceblue;
+    padding-top: 20px;
 }
 
 #texto3{
@@ -75,6 +82,7 @@
     margin-right: 20%;
     text-align: justify;
     color: aliceblue;
+    padding-top: 20px;
 }
 
 .fondo2{
