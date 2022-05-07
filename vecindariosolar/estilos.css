@@ -92,3 +92,9 @@
 .tour .tourmap {
     cursor: pointer;
 }
+
+.objsistsolar{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
