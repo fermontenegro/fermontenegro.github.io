@@ -1,0 +1,104 @@
+.titulo{
+    text-align: center;
+    justify-content: center;
+    background-image: url(./imagenes/fondo1.jpg);
+    color: aliceblue;
+}
+
+.titulo h4{
+    text-align: justify;
+    margin-bottom: 0%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 20px;
+}
+
+.titulo img{
+    padding-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+#carouselMultiItemExample{
+    padding-top: 45px;
+}
+
+.titulotour{
+    text-align: center;
+    justify-content: center;
+    color: aliceblue;
+
+}
+
+.tour {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.titulotour h4{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    padding-bottom: 20px;
+    
+}
+
+.tour img{
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+#texto1{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    color: aliceblue;
+    padding-top: 20px;
+}
+
+#texto2{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    color: aliceblue;
+    padding-top: 20px;
+}
+
+#texto3{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    color: aliceblue;
+    padding-top: 20px;
+}
+
+.fondo2{
+    background: url(./imagenes/fondo2.jpg);
+}
+
+.tour .tourmap {
+    cursor: pointer;
+}
+
+.objsistsolar{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+picture{
+    justify-content: center;
+}
