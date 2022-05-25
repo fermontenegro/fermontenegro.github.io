@@ -24,59 +24,65 @@
         </picture>
     </div>
 
-    <!--
-        shape="rect" coords="X_ti,Y_ti, X_br,Y_br" ej: "34, 44, 270, 350"
-        shape="circle" coords="X,Y,r" ej: "350,250,44"
-        shape="poly" coords="X1,Y1,  ...... Xn,Yn"
-    -->
-
-    <map name="sistema-solar">
-        <area id="obj" shape="circle" onclick="funcPlaneta(this)">
+    <map id="map" name="sistema-solar">
+        
     </map>
+
+    <p id="test"></p>
 
     <script>
         function funcPlaneta(lugar) {
             //Para información del área seleccionada
             //iframe para presentar nueva info de manera inner
-            var lugarClick = lugar.getAttribute("data-obj-selec");
+            var lugarClick = lugar
             alert("Has seleccionado " + lugarClick);
         }
         function cambiaTam() {
             nuevoT = window.innerWidth;
-            //window.innerHeight;
-            /*
-            The window.screen object can be written without the window prefix.
-            Properties:
-                screen.width
-                screen.height
-                screen.availWidth
-                screen.availHeight
-                screen.colorDepth
-                screen.pixelDepth
-            */
-            let lstObjs = ["Sol", "Mercurio", "Venus", "Tierra", "Marte", "Jupiter", "Saturno", "Urano", "Neptuno", "Cometa"];
+            mivar = "";
 
             if (nuevoT > 1024) {
-                var lstCoor = ["751,384,100", "915,486,100", "1008,449,50", "1094,401,50", "1189,333,50", "470,163,50", "356,114,50", "268,90,50", "199,73,50", "27,321,179,370"];
+                var lstCoor = ["Sol;751,384,100;", "Mercurio;915,486,100;", "Venus;1008,449,50;", "Tierra;1094,401,50;", "Marte;1189,333,50;", "Jupiter;470,163,50", "Saturno;356,114,50", "Urano;268,90,50", "Neptuno;199,73,50", "Cometa;27,321,179,370"];
             } else if (nuevoT > 800) {
-                var lstCoor = ["601,326,100", "702,402,100", "806,372,50", "875,332,50", "950,277,50", "376,140,50", "282,98,50", "213,83,50", "158,70,50", "20,265,140,306"];
+                var lstCoor = ["Sol;601,326,100;", "Mercurio;702,402,100;", "Venus;806,372,50;", "Tierra;875,332,50;", "Marte;950,277,50;", "Jupiter;376,140,50", "Saturno;282,98,50", "Urano;213,83,50", "Neptuno;158,70,50", "Cometa;20,265,140,306"];
             } else if (nuevoT > 640) {
-                var lstCoor = ["470,234,100", "571,300,50", "631,277,50", "682,248,50", "741,204,50", "232,88,50", "220,66,50", "166,53,50", "122,43,50", "20,192,110,230"];
+                var lstCoor = ["Sol;470,234,100;", "Mercurio;571,300,50;", "Venus;631,277,50;", "Tierra;682,248,50;", "Marte;741,204,50;", "Jupiter;232,88,50", "Saturno;220,66,50", "Urano;166,53,50", "Neptuno;122,43,50", "Cometa;20,192,110,230"];
             } else if (nuevoT > 414) {
-                var lstCoor = ["377,200,100", "504,232,50", "325,150,50", "546,208,50", "594,174,50", "232,88,50", "176,64,50", "134,53,50", "100,46,50", "17,163,88,195"];
+                var lstCoor = ["Sol;377,200,100;", "Mercurio;504,232,50;", "Venus;325,150,50;", "Tierra;546,208,50;", "Marte;594,174,50;", "Jupiter;232,88,50", "Saturno;176,64,50", "Urano;134,53,50", "Neptuno;100,46,50", "Cometa;17,163,88,195"];
             } else {
-                var lstCoor = ["245,129,100", "294,161,50", "325,150,50", "350,136,50", "382,111,50", "150,57,50", "114,40,50", "88,35,50", "67,29,50", "20,100,59,125"];
+                var lstCoor = ["Sol;245,129,100;", "Mercurio;294,161,50;", "Venus;325,150,50;", "Tierra;350,136,50;", "Marte;382,111,50;", "Jupiter;150,57,50", "Saturno;114,40,50", "Urano;88,35,50", "Neptuno;67,29,50", "Cometa;20,100,59,125"];
             }
 
-            for (const coor of lstCoor) {
-                var idObj = "obj" + (lstCoor.indexOf(coor) + 1).toString();
-                document.getElementById(idObj).setAttribute("coords", coor);
+            lstCoor.forEach(p);
+
+            function p (item){
+                mivar += item;
             }
-            //lstObjs.forEach(function (valor, i)
-            lstObjs.forEach((valor, i) => {
-                var idObj = "obj".toString();
-                document.getElementById(idObj).setAttribute("data-obj-selec", valor);
-            });
+
+            mivar = mivar.split(";");
+
+            var area =  new Array();
+            var j = 0;
+
+            area = document.createElement("area");
+
+            for(var i = 0; i= 9; i++){
+                if (i===0 || i === 2 || i===4 || i===6 || i=== 8 ){
+                    continue
+                }else{
+                    area[j].shape = circle;
+                    area[j].coords = mivar[i];
+                    area[j].onclick(funcPlaneta(mivar[i-1]));
+                    j++;
+                }
+            }
+
+            for(var i = 0; i=9; i++){
+                document.getElementById("map").appendChild(area[i]);
+            }
+
+
+    
         }
     </script>
 
