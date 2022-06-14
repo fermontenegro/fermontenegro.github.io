@@ -13,8 +13,7 @@
     <p>Click en objetos de interés:</p>
 
 
-    <div class="imagen" style="overflow-x: auto
-    ;">
+    <div class="imagen" style="overflow-x: auto;">
         <picture>
             <source media="(max-width: 414px)" srcset="./imagenes/solar_sys414.jpeg">
             <source media="(max-width: 640px)" srcset="./imagenes/solar_sys640.jpeg">
@@ -25,7 +24,7 @@
     </div>
 
     <map id="map" name="sistema-solar">
-        
+
     </map>
 
     <p id="test"></p>
@@ -42,47 +41,43 @@
             mivar = "";
 
             if (nuevoT > 1024) {
-                var lstCoor = ["Sol;751,384,100;", "Mercurio;915,486,100;", "Venus;1008,449,50;", "Tierra;1094,401,50;", "Marte;1189,333,50;", "Jupiter;470,163,50", "Saturno;356,114,50", "Urano;268,90,50", "Neptuno;199,73,50", "Cometa;27,321,179,370"];
+                var lstCoor = ["Sol;751,384,100;", "Mercurio;915,486,100;", "Venus;1008,449,50;", "Tierra;1094,401,50;", "Marte;1189,333,50;", "Jupiter;470,163,50;", "Saturno;356,114,50;", "Urano;268,90,50;", "Neptuno;199,73,50;", "Cometa;27,321,179,370"];
             } else if (nuevoT > 800) {
-                var lstCoor = ["Sol;601,326,100;", "Mercurio;702,402,100;", "Venus;806,372,50;", "Tierra;875,332,50;", "Marte;950,277,50;", "Jupiter;376,140,50", "Saturno;282,98,50", "Urano;213,83,50", "Neptuno;158,70,50", "Cometa;20,265,140,306"];
+                var lstCoor = ["Sol;601,326,100;", "Mercurio;702,402,100;", "Venus;806,372,50;", "Tierra;875,332,50;", "Marte;950,277,50;", "Jupiter;376,140,50;", "Saturno;282,98,50;", "Urano;213,83,50;", "Neptuno;158,70,50;", "Cometa;20,265,140,306"];
             } else if (nuevoT > 640) {
-                var lstCoor = ["Sol;470,234,100;", "Mercurio;571,300,50;", "Venus;631,277,50;", "Tierra;682,248,50;", "Marte;741,204,50;", "Jupiter;232,88,50", "Saturno;220,66,50", "Urano;166,53,50", "Neptuno;122,43,50", "Cometa;20,192,110,230"];
+                var lstCoor = ["Sol;470,234,100;", "Mercurio;571,300,50;", "Venus;631,277,50;", "Tierra;682,248,50;", "Marte;741,204,50;", "Jupiter;232,88,50;", "Saturno;220,66,50;", "Urano;166,53,50;", "Neptuno;122,43,50;", "Cometa;20,192,110,230"];
             } else if (nuevoT > 414) {
-                var lstCoor = ["Sol;377,200,100;", "Mercurio;504,232,50;", "Venus;325,150,50;", "Tierra;546,208,50;", "Marte;594,174,50;", "Jupiter;232,88,50", "Saturno;176,64,50", "Urano;134,53,50", "Neptuno;100,46,50", "Cometa;17,163,88,195"];
+                var lstCoor = ["Sol;377,200,100;", "Mercurio;504,232,50;", "Venus;325,150,50;", "Tierra;546,208,50;", "Marte;594,174,50;", "Jupiter;232,88,50;", "Saturno;176,64,50;", "Urano;134,53,50;", "Neptuno;100,46,50;", "Cometa;17,163,88,195"];
             } else {
-                var lstCoor = ["Sol;245,129,100;", "Mercurio;294,161,50;", "Venus;325,150,50;", "Tierra;350,136,50;", "Marte;382,111,50;", "Jupiter;150,57,50", "Saturno;114,40,50", "Urano;88,35,50", "Neptuno;67,29,50", "Cometa;20,100,59,125"];
+                var lstCoor = ["Sol;245,129,100;", "Mercurio;294,161,50;", "Venus;325,150,50;", "Tierra;350,136,50;", "Marte;382,111,50;", "Jupiter;150,57,50;", "Saturno;114,40,50;", "Urano;88,35,50;", "Neptuno;67,29,50;", "Cometa;20,100,59,125"];
             }
 
             lstCoor.forEach(p);
 
-            function p (item){
+            function p(item) {
                 mivar += item;
             }
 
             mivar = mivar.split(";");
 
-            var area =  new Array();
-            var j = 0;
+            area = document.createElement('area');
 
-            area = document.createElement("area");
-
-            for(var i = 0; i= 9; i++){
-                if (i===0 || i === 2 || i===4 || i===6 || i=== 8 ){
+            for (var i = 0; i = 9; i++) {
+                if (i === 0 || i === 2 || i === 4 || i === 6 || i === 8)  { //aca se salta los planetas para evitar que se agreguen a las coordenadas.
                     continue
-                }else{
-                    area[j].shape = circle;
-                    area[j].coords = mivar[i];
-                    area[j].onclick(funcPlaneta(mivar[i-1]));
-                    j++;
+                } else if (i != 9) {                                        //asigana a shape circle menos a cometa que la ultima interacion.
+                    area.shape = 'circle';
+                    area.coords = String(mivar[i]);
+                    area.onclick(funcPlaneta(mivar[i - 1]));                // i-1 es para asignar el planeta correspondiente.
+                    document.getElementById('map').appendChild(area);
+                } else {                                                   // aca entra solo para crear area para el cometa.
+                    area.shape = 'rect';
+                    area.coords = String(mivar[i]);
+                    area.onclick(funcPlaneta(mivar[i - 1]));
+                    document.getElementById('map').appendChild(area);
                 }
             }
 
-            for(var i = 0; i=9; i++){
-                document.getElementById("map").appendChild(area[i]);
-            }
-
-
-    
         }
     </script>
 
