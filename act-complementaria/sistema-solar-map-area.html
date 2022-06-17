@@ -40,6 +40,12 @@
             nuevoT = window.innerWidth;
             mivar = "";
 
+            const map = document.getElementById("map");
+
+            while (map.hasChildNodes()){
+                map.removeChild(map.firstChild);
+            }
+
             if (nuevoT > 1024) {
                 var lstCoor = ["Sol;751,384,100;", "Mercurio;915,486,100;", "Venus;1008,449,50;", "Tierra;1094,401,50;", "Marte;1189,333,50;", "Jupiter;470,163,50;", "Saturno;356,114,50;", "Urano;268,90,50;", "Neptuno;199,73,50;", "Cometa;27,321,179,370"];
             } else if (nuevoT > 800) {
@@ -58,23 +64,28 @@
                 mivar += item;
             }
 
+            formaC = "circle";
+            formaR = "rect";
+
             mivar = mivar.split(";");
+
+            document.getElementById("test").innerHTML(mivar);
 
             area = document.createElement('area');
 
             for (var i = 0; i = 9; i++) {
                 if (i === 0 || i === 2 || i === 4 || i === 6 || i === 8)  { //aca se salta los planetas para evitar que se agreguen a las coordenadas.
-                    continue
-                } else if (i != 9) {                                        //asigana a shape circle menos a cometa que la ultima interacion.
-                    area.shape = 'circle';
-                    area.coords = String(mivar[i]);
-                    area.onclick(funcPlaneta(mivar[i - 1]));                // i-1 es para asignar el planeta correspondiente.
-                    document.getElementById('map').appendChild(area);
+                    continue;
+                } else if (i != 9) {                                        //asigana a shape circle menos a cometa que es la ultima interacion.
+                    area.setAttribute("shape", formaC);
+                    area.setAttribute("coords",mivar[i])
+                    area.onclick(funcPlaneta(mivar[i - 1]));            // i-1 es para asignar el planeta correspondiente.
+                    map.appendChild(area);
                 } else {                                                   // aca entra solo para crear area para el cometa.
-                    area.shape = 'rect';
-                    area.coords = String(mivar[i]);
-                    area.onclick(funcPlaneta(mivar[i - 1]));
-                    document.getElementById('map').appendChild(area);
+                    area.setAttribute("shape", formaR);
+                    area.setAttribute("coords",mivar[i]);
+                    area.onclick(funcPlaneta(mivar[i - 1]));             
+                    map.appendChild(area);
                 }
             }
 
